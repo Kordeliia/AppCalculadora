@@ -2,7 +2,6 @@ package com.example.appcalculadora
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import com.example.appcalculadora.databinding.ActivityMainBinding
@@ -33,13 +32,16 @@ class MainActivity : AppCompatActivity() {
 
             R.id.btnClear -> {
                 binding.tvOperation.text = ""
-                binding.tvReultado.text = ""
+                binding.tvResultado.text = ""
             }
 
             R.id.btnResultado -> {
                 tryResolve(binding.tvOperation.text.toString())
             }
-
+            R.id.btnSuma, R.id.btnResta, R.id.btnMultiplicacion, R.id.btnDivision -> {
+                tryResolve(binding.tvOperation.text.toString())
+                binding.tvOperation.append(valueStre)
+            }
             else -> {
                 binding.tvOperation.append(valueStre)
             }
@@ -47,39 +49,54 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun tryResolve(operationRef: String) {
-        val operator = getOperator(operationRef)
+        if(operationRef.isEmpty()) return
+        var operation = operationRef
+        if(operation.contains(OPERATOR_DECIMAL) && operation.lastIndexOf(OPERATOR_DECIMAL) == operation.length-1){
+            operation = operation.substring(0, operation.length-1)
+        }
+        val operator = getOperator(operation)
         var values = arrayOfNulls<String>(0)
         if (operator != OPERATOR_NULL){
             if(operator == OPERATOR_RESTA)
             {
-                val index = operationRef.lastIndexOf(OPERATOR_RESTA)
-                if(index < operationRef.length-1){
+                val index = operation.lastIndexOf(OPERATOR_RESTA)
+                if(index < operation.length-1){
                     values = arrayOfNulls(2)
-                    values[0] = operationRef.substring(0, index)
-                    values[1] = operationRef.substring(index+1)
+                    values[0] = operation.substring(0, index)
+                    values[1] = operation.substring(index+1)
                 }
                 else{
                     values = arrayOfNulls(1)
-                    values[0] = operationRef.substring(0, index)
+                    values[0] = operation.substring(0, index)
                 }
             } else{
-                values = operationRef.split(operator).toTypedArray()
+                values = operation.split(operator).toTypedArray()
 
             }
             if(values.size > 1){
                 try {
                     val numberOne = values[0]!!.toDouble()
                     val numberTwo = values[1]!!.toDouble()
-                    binding.tvReultado.text = getResult(numberOne, numberTwo, operator).toString()
+                    binding.tvResultado.text = getResult(numberOne, numberTwo, operator).toString()
+                    if(binding.tvResultado.text.isNotEmpty())
+                    {
+                        binding.tvOperation.text = binding.tvResultado.text
+                    }
                 } catch (e: NumberFormatException) {
-                    Snackbar.make(binding.root, "La expresion NO es correcta", Snackbar.LENGTH_SHORT).show()
+                    showMessg()
                 }
             } else{
-                Snackbar.make(binding.root, "La expresion NO es correcta", Snackbar.LENGTH_SHORT).show()
+                if(operator != OPERATOR_NULL){
+                    showMessg()
+                }
             }
-
         }
+    }
 
+    private fun showMessg() {
+        Snackbar.make(binding.root, getString(R.string.exception_n1), Snackbar.LENGTH_SHORT)
+            .setAnchorView(binding.llBotones1)
+            .show()
     }
 
     private fun getOperator(operation: String): String {

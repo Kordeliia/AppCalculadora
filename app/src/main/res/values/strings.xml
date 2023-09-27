@@ -17,4 +17,5 @@
     <string name="point_igual">=</string>
     <string name="point_decimal">.</string>
     <string name="point_clear">CLEAR</string>
+    <string name="exception_n1">La expresion NO es correcta</string>
 </resources>
