@@ -36,10 +36,10 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.btnResultado -> {
-                tryResolve(binding.tvOperation.text.toString())
+                tryResolve(binding.tvOperation.text.toString(), true)
             }
             R.id.btnSuma, R.id.btnResta, R.id.btnMultiplicacion, R.id.btnDivision -> {
-                tryResolve(binding.tvOperation.text.toString())
+                tryResolve(binding.tvOperation.text.toString(), false)
                 binding.tvOperation.append(valueStre)
             }
             else -> {
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun tryResolve(operationRef: String) {
+    private fun tryResolve(operationRef: String, isFromResolve: Boolean) {
         if(operationRef.isEmpty()) return
         var operation = operationRef
         if(operation.contains(OPERATOR_DECIMAL) && operation.lastIndexOf(OPERATOR_DECIMAL) == operation.length-1){
@@ -78,15 +78,15 @@ class MainActivity : AppCompatActivity() {
                     val numberOne = values[0]!!.toDouble()
                     val numberTwo = values[1]!!.toDouble()
                     binding.tvResultado.text = getResult(numberOne, numberTwo, operator).toString()
-                    if(binding.tvResultado.text.isNotEmpty())
+                    if(binding.tvResultado.text.isNotEmpty() && !isFromResolve)
                     {
                         binding.tvOperation.text = binding.tvResultado.text
                     }
                 } catch (e: NumberFormatException) {
-                    showMessg()
+                    if (isFromResolve) showMessg()
                 }
             } else{
-                if(operator != OPERATOR_NULL){
+                if(isFromResolve && operator != OPERATOR_NULL){
                     showMessg()
                 }
             }
