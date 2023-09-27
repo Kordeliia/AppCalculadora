@@ -18,9 +18,63 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    
+    <TextView
+        android:id="@+id/tvReultado"
+        android:layout_width="0dp"
+        android:layout_height="0DP"
+        android:padding="@dimen/common_padding_min"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        tools:text="10.0"
+        android:background="?colorSurface"
+        android:textColor="?colorOnSurface"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/llBotones1"
+        app:layout_constraintTop_toBottomOf="@id/tvOperation"/>
+
+
+
     <LinearLayout
-        android:id="@+id/llTop"
+        android:id="@+id/llBotones1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintDimensionRatio = "H, 4:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/llBotones2">
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llBotones2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintDimensionRatio = "H, 4:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/llBotones3">
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llBotones3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintDimensionRatio = "H, 4:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/llBotones4"
+        >
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llBotones4"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
@@ -30,5 +84,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
