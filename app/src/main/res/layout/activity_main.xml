@@ -45,10 +45,34 @@
         app:layout_constraintDimensionRatio = "H, 4:1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/llBotones2">
+        app:layout_constraintBottom_toTopOf="@id/llBotones2"
+        >
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:text="@string/point_clear"
+            android:textAppearance="?attr/textAppearanceHeadline4"/>
+        <ImageButton
+            android:id="@+id/btnAtras"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:src="@drawable/ic_erase2"
+            android:background="@color/teal_700"/>
+        <Button
+            android:id="@+id/btnSuma"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:text="@string/point_suma"
+            android:textAppearance="?attr/textAppearanceHeadline4"
+            android:backgroundTint="@color/teal_700"/>
     </LinearLayout>
-
-
     <LinearLayout
         android:id="@+id/llBotones2"
         android:layout_width="0dp"
@@ -58,9 +82,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/llBotones3">
-
+        <Button
+            android:id="@+id/btn1"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:text="@string/point_1"
+            android:textAppearance="?attr/textAppearanceHeadline3"
+            android:backgroundTint="@color/teal_200"/>
+        <Button
+            android:id="@+id/btn2"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:text="@string/point_2"
+            android:textAppearance="?attr/textAppearanceHeadline3"
+            android:backgroundTint="@color/teal_200"/>
+        <Button
+            android:id="@+id/btn3"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:text="@string/point_3"
+            android:textAppearance="?attr/textAppearanceHeadline3"
+            android:backgroundTint="@color/teal_200"/>
+        <Button
+            android:id="@+id/btnResta"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:text="@string/point_resta"
+            android:textAppearance="?attr/textAppearanceHeadline3"
+            android:backgroundTint="@color/teal_700"/>
     </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/llBotones3"
@@ -70,9 +128,43 @@
         app:layout_constraintDimensionRatio = "H, 4:1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/llBotones4"
-        >
-
+        app:layout_constraintBottom_toTopOf="@id/llBotones4">
+        <Button
+            android:id="@+id/btn4"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:text="@string/point_4"
+            android:textAppearance="?attr/textAppearanceHeadline3"
+            android:backgroundTint="@color/teal_200"/>
+        <Button
+            android:id="@+id/btn5"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:text="@string/point_5"
+            android:textAppearance="?attr/textAppearanceHeadline3"
+            android:backgroundTint="@color/teal_200"/>
+        <Button
+            android:id="@+id/btn6"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:text="@string/point_6"
+            android:textAppearance="?attr/textAppearanceHeadline3"
+            android:backgroundTint="@color/teal_200"/>
+        <Button
+            android:id="@+id/btnMultiplicacion"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:text="@string/point_multiplicacion"
+            android:textAppearance="?attr/textAppearanceHeadline3"
+            android:backgroundTint="@color/teal_700"/>
     </LinearLayout>
 
 
@@ -84,7 +176,85 @@
         app:layout_constraintDimensionRatio = "H, 4:1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/llBotones5"
+        >
+        <Button
+            android:id="@+id/btn7"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:text="@string/point_7"
+            android:textAppearance="?attr/textAppearanceHeadline3"
+            android:backgroundTint="@color/teal_200"
+            />
+        <Button
+            android:id="@+id/btn8"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:text="@string/point_8"
+            android:textAppearance="?attr/textAppearanceHeadline3"
+            android:backgroundTint="@color/teal_200"/>
+        <Button
+            android:id="@+id/btn9"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:text="@string/point_9"
+            android:textAppearance="?attr/textAppearanceHeadline3"
+            android:backgroundTint="@color/teal_200"/>
+        <Button
+            android:id="@+id/btnDivision"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:text="@string/point_division"
+            android:textAppearance="?attr/textAppearanceHeadline3"
+            android:backgroundTint="@color/teal_700"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llBotones5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintDimensionRatio = "H, 4:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
+        <Button
+            android:id="@+id/btnDecimal"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:text="@string/point_decimal"
+            android:textAppearance="?attr/textAppearanceHeadline3"
+            android:backgroundTint="@color/teal_700"/>
+        <Button
+            android:id="@+id/btn0"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:text="@string/point_0"
+            android:textAppearance="?attr/textAppearanceHeadline3"
+            android:backgroundTint="@color/teal_200"
+           />
+        <Button
+            android:id="@+id/btnResultado"
+            android:layout_margin="@dimen/common_padding_min"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:text="@string/point_igual"
+            android:textAppearance="?attr/textAppearanceHeadline3"
+            android:backgroundTint="@color/teal_700"/>
 
     </LinearLayout>
 

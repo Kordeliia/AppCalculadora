@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">AppCalculadora</string>
+    <string name="point_1">1</string>
+    <string name="point_2">2</string>
+    <string name="point_3">3</string>
+    <string name="point_4">4</string>
+    <string name="point_5">5</string>
+    <string name="point_6">6</string>
+    <string name="point_7">7</string>
+    <string name="point_8">8</string>
+    <string name="point_9">9</string>
+    <string name="point_0">0</string>
+    <string name="point_suma">+</string>
+    <string name="point_resta">-</string>
+    <string name="point_multiplicacion">*</string>
+    <string name="point_division">/</string>
+    <string name="point_igual">=</string>
+    <string name="point_decimal">,</string>
+    <string name="point_clear">CLEAR</string>
 </resources>
