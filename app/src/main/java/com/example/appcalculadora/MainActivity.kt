@@ -15,6 +15,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
     fun onClickButton(view : View){
-        Log.i("click", (view as Button).text.toString())
+        val valueStre = (view as Button).text.toString()
+        when(view.id){
+            R.id.btnAtras -> {
+
+            }
+            R.id.btnClear -> {
+
+            }
+            R.id.btnResultado -> {
+
+            }
+            else -> {
+                binding.tvOperation.append(valueStre)
+            }
+        }
     }
 }
