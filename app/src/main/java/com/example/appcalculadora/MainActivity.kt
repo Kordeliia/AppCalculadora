@@ -18,10 +18,18 @@ class MainActivity : AppCompatActivity() {
         val valueStre = (view as Button).text.toString()
         when(view.id){
             R.id.btnAtras -> {
-
+                val lenght = binding.tvOperation.text.length
+                val newOperation : String
+                if (lenght != 0){
+                    newOperation = binding.tvOperation.text.toString().substring(0, lenght-1)
+                } else {
+                    newOperation = binding.tvOperation.text.toString()
+                }
+                binding.tvOperation.text= newOperation
             }
             R.id.btnClear -> {
-
+                binding.tvOperation.text = ""
+                binding.tvReultado.text = ""
             }
             R.id.btnResultado -> {
 
