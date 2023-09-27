@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:paddingBottom="@dimen/common_padding_min">
 
     <TextView
         android:id="@+id/tvOperation"
@@ -54,15 +55,21 @@
             android:layout_height="match_parent"
             android:layout_weight="50"
             android:text="@string/point_clear"
-            android:textAppearance="?attr/textAppearanceHeadline4"/>
-        <ImageButton
+            android:onClick="onClickButton"
+            android:textAppearance="?attr/textAppearanceHeadline4"
+            android:background="@color/teal_200"/>
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAtras"
             android:layout_margin="@dimen/common_padding_min"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="25"
-            android:src="@drawable/ic_erase2"
-            android:background="@color/teal_700"/>
+            app:icon="@drawable/ic_erase2"
+            android:onClick="onClickButton"
+            app:iconGravity="textStart"
+            android:backgroundTint="@color/teal_700"
+            app:iconPadding="@dimen/icon_padding"
+            />
         <Button
             android:id="@+id/btnSuma"
             android:layout_margin="@dimen/common_padding_min"
@@ -70,6 +77,7 @@
             android:layout_height="match_parent"
             android:layout_weight="25"
             android:text="@string/point_suma"
+            android:onClick="onClickButton"
             android:textAppearance="?attr/textAppearanceHeadline4"
             android:backgroundTint="@color/teal_700"/>
     </LinearLayout>
@@ -89,6 +97,7 @@
             android:layout_height="match_parent"
             android:layout_weight="25"
             android:text="@string/point_1"
+            android:onClick="onClickButton"
             android:textAppearance="?attr/textAppearanceHeadline3"
             android:backgroundTint="@color/teal_200"/>
         <Button
@@ -98,6 +107,7 @@
             android:layout_height="match_parent"
             android:layout_weight="25"
             android:text="@string/point_2"
+            android:onClick="onClickButton"
             android:textAppearance="?attr/textAppearanceHeadline3"
             android:backgroundTint="@color/teal_200"/>
         <Button
@@ -107,6 +117,7 @@
             android:layout_height="match_parent"
             android:layout_weight="25"
             android:text="@string/point_3"
+            android:onClick="onClickButton"
             android:textAppearance="?attr/textAppearanceHeadline3"
             android:backgroundTint="@color/teal_200"/>
         <Button
@@ -116,6 +127,7 @@
             android:layout_height="match_parent"
             android:layout_weight="25"
             android:text="@string/point_resta"
+            android:onClick="onClickButton"
             android:textAppearance="?attr/textAppearanceHeadline3"
             android:backgroundTint="@color/teal_700"/>
     </LinearLayout>
@@ -136,6 +148,7 @@
             android:layout_height="match_parent"
             android:layout_weight="25"
             android:text="@string/point_4"
+            android:onClick="onClickButton"
             android:textAppearance="?attr/textAppearanceHeadline3"
             android:backgroundTint="@color/teal_200"/>
         <Button
@@ -145,6 +158,7 @@
             android:layout_height="match_parent"
             android:layout_weight="25"
             android:text="@string/point_5"
+            android:onClick="onClickButton"
             android:textAppearance="?attr/textAppearanceHeadline3"
             android:backgroundTint="@color/teal_200"/>
         <Button
@@ -154,6 +168,7 @@
             android:layout_height="match_parent"
             android:layout_weight="25"
             android:text="@string/point_6"
+            android:onClick="onClickButton"
             android:textAppearance="?attr/textAppearanceHeadline3"
             android:backgroundTint="@color/teal_200"/>
         <Button
@@ -162,6 +177,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="25"
+            android:onClick="onClickButton"
             android:text="@string/point_multiplicacion"
             android:textAppearance="?attr/textAppearanceHeadline3"
             android:backgroundTint="@color/teal_700"/>
@@ -185,6 +201,7 @@
             android:layout_height="match_parent"
             android:layout_weight="25"
             android:text="@string/point_7"
+            android:onClick="onClickButton"
             android:textAppearance="?attr/textAppearanceHeadline3"
             android:backgroundTint="@color/teal_200"
             />
@@ -195,6 +212,7 @@
             android:layout_height="match_parent"
             android:layout_weight="25"
             android:text="@string/point_8"
+            android:onClick="onClickButton"
             android:textAppearance="?attr/textAppearanceHeadline3"
             android:backgroundTint="@color/teal_200"/>
         <Button
@@ -204,6 +222,7 @@
             android:layout_height="match_parent"
             android:layout_weight="25"
             android:text="@string/point_9"
+            android:onClick="onClickButton"
             android:textAppearance="?attr/textAppearanceHeadline3"
             android:backgroundTint="@color/teal_200"/>
         <Button
@@ -212,6 +231,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="25"
+            android:onClick="onClickButton"
             android:text="@string/point_division"
             android:textAppearance="?attr/textAppearanceHeadline3"
             android:backgroundTint="@color/teal_700"/>
@@ -222,6 +242,7 @@
         android:id="@+id/llBotones5"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="onClickButton"
         android:orientation="horizontal"
         app:layout_constraintDimensionRatio = "H, 4:1"
         app:layout_constraintStart_toStartOf="parent"
@@ -235,7 +256,8 @@
             android:layout_weight="25"
             android:text="@string/point_decimal"
             android:textAppearance="?attr/textAppearanceHeadline3"
-            android:backgroundTint="@color/teal_700"/>
+            android:backgroundTint="@color/teal_700"
+            android:onClick="onClickButton"/>
         <Button
             android:id="@+id/btn0"
             android:layout_margin="@dimen/common_padding_min"
@@ -245,6 +267,7 @@
             android:text="@string/point_0"
             android:textAppearance="?attr/textAppearanceHeadline3"
             android:backgroundTint="@color/teal_200"
+            android:onClick="onClickButton"
            />
         <Button
             android:id="@+id/btnResultado"
@@ -254,7 +277,8 @@
             android:layout_weight="50"
             android:text="@string/point_igual"
             android:textAppearance="?attr/textAppearanceHeadline3"
-            android:backgroundTint="@color/teal_700"/>
+            android:backgroundTint="@color/teal_700"
+            android:onClick="onClickButton"/>
 
     </LinearLayout>
 

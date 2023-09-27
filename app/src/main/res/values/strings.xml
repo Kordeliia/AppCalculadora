@@ -13,7 +13,7 @@
     <string name="point_suma">+</string>
     <string name="point_resta">-</string>
     <string name="point_multiplicacion">*</string>
-    <string name="point_division">/</string>
+    <string name="point_division">÷</string>
     <string name="point_igual">=</string>
     <string name="point_decimal">,</string>
     <string name="point_clear">CLEAR</string>
