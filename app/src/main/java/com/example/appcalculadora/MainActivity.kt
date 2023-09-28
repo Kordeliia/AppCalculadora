@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClickButton(view: View) {
-        val valueStre = (view as Button).text.toString()
+        val valueStr = (view as Button).text.toString()
         when (view.id) {
             R.id.btnAtras -> {
                 val lenght = binding.tvOperation.text.length
@@ -40,10 +40,27 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.btnSuma, R.id.btnResta, R.id.btnMultiplicacion, R.id.btnDivision -> {
                 tryResolve(binding.tvOperation.text.toString(), false)
-                binding.tvOperation.append(valueStre)
+                val operator = valueStr
+                val operation = binding.tvOperation.text.toString()
+                addOperator(operator, operation)
+               // binding.tvOperation.append(valueStr)
             }
             else -> {
-                binding.tvOperation.append(valueStre)
+                binding.tvOperation.append(valueStr)
+            }
+        }
+    }
+
+    private fun addOperator(operator: String, operation: String) {
+        val lastElement = if (operation.isEmpty()) ""
+        else operation.substring(operation.length-1)
+        if(operator == OPERATOR_RESTA){
+            if(operation.isEmpty() || lastElement != OPERATOR_RESTA && lastElement != OPERATOR_DECIMAL){
+                binding.tvOperation.append(operator)
+            }
+        } else{
+            if(!operation.isEmpty() && lastElement != OPERATOR_DECIMAL){
+                binding.tvOperation.append(operator)
             }
         }
     }
