@@ -9,9 +9,12 @@
     <color name="blue_500">#338FC1</color>
     <color name="blue_700">#238DC6</color>
     <color name="blue_300">#5CABD6</color>
-    <color name="blue_900">#037FC3</color>
+    <color name="lBlue_800">#0277bd</color>
     <color name="gray_900">#333232</color>
     <color name="gray_700">#454343</color>
     <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_800">#00695c</color>
     <color name="teal_700">#FF018786</color>
+    <color name="red_500">#f44336</color>
+    <color name="lBlue_900">#01579b</color>
 </resources>
