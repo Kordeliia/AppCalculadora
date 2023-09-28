@@ -9,287 +9,166 @@
 
     <TextView
         android:id="@+id/tvOperation"
-        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="@dimen/common_padding_min"
         android:textAppearance="?attr/textAppearanceHeadline6"
         tools:text="5x2"
-        android:background="?colorSurface"
-        android:textColor="?colorOnSurface"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        style="@style/MyTextView"
+        tools:ignore="MissingConstraints"
         />
     <TextView
         android:id="@+id/tvResultado"
-        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:padding="@dimen/common_padding_min"
         android:layout_marginBottom="@dimen/common_padding_min"
         android:textAppearance="?attr/textAppearanceHeadline3"
         tools:text="10.0"
         android:gravity="center_vertical|end"
-        android:background="?colorSurface"
-        android:textColor="?colorOnSurface"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/llBotones1"
-        app:layout_constraintTop_toBottomOf="@id/tvOperation"/>
+        app:layout_constraintTop_toBottomOf="@id/tvOperation"
+        style="@style/MyTextView"
+        tools:ignore="MissingConstraints"/>
 
 
 
     <LinearLayout
         android:id="@+id/llBotones1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_marginEnd="@dimen/common_padding_min"
-        app:layout_constraintDimensionRatio = "H, 4:1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/MyLinearLayout"
+        tools:ignore="MissingConstraints"
         app:layout_constraintBottom_toTopOf="@id/llBotones2"
         >
         <Button
             android:id="@+id/btnClear"
-            android:layout_marginStart="@dimen/common_padding_min"
             android:layout_marginEnd="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
             android:layout_weight="50"
             android:text="@string/point_clear"
-            android:onClick="onClickButton"
-            android:textAppearance="?attr/textAppearanceHeadline4"
+            style="@style/MyClearButton"
+            tools:ignore="MissingConstraints"
             android:backgroundTint="@color/red_500"
 
             />
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAtras"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             app:icon="@drawable/ic_erase2"
             android:onClick="onClickButton"
             app:iconGravity="textStart"
-            android:backgroundTint="@color/lBlue_900"
+            style="@style/MyButtonSecondary"
+            tools:ignore="MissingConstraints"
             app:iconPadding="@dimen/icon_padding"
             />
         <Button
             android:id="@+id/btnSuma"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/point_suma"
-            android:onClick="onClickButton"
-            android:textAppearance="?attr/textAppearanceHeadline4"
-            android:backgroundTint="@color/lBlue_800"/>
+            style="@style/MyButtonOperator"
+            tools:ignore="MissingConstraints"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/llBotones2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_marginEnd="@dimen/common_padding_min"
-        app:layout_constraintDimensionRatio = "H, 4:1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/MyLinearLayout"
+        tools:ignore="MissingConstraints"
         app:layout_constraintBottom_toTopOf="@id/llBotones3">
         <Button
             android:id="@+id/btn1"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/point_1"
-            android:onClick="onClickButton"
-            android:textAppearance="?attr/textAppearanceHeadline3"
-            android:backgroundTint="@color/teal_800"/>
+            style="@style/MyButtonNumeric"
+            tools:ignore="MissingConstraints"/>
         <Button
             android:id="@+id/btn2"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/point_2"
-            android:onClick="onClickButton"
-            android:textAppearance="?attr/textAppearanceHeadline3"
-            android:backgroundTint="@color/teal_800"/>
+            style="@style/MyButtonNumeric"
+            tools:ignore="MissingConstraints"/>
         <Button
             android:id="@+id/btn3"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/point_3"
-            android:onClick="onClickButton"
-            android:textAppearance="?attr/textAppearanceHeadline3"
-            android:backgroundTint="@color/teal_800"/>
+            style="@style/MyButtonNumeric"
+            tools:ignore="MissingConstraints"/>
         <Button
             android:id="@+id/btnResta"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/point_resta"
-            android:onClick="onClickButton"
-            android:textAppearance="?attr/textAppearanceHeadline3"
-            android:backgroundTint="@color/lBlue_800"/>
+            style="@style/MyButtonOperator"
+            tools:ignore="MissingConstraints"/>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/llBotones3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="@dimen/common_padding_min"
-        android:orientation="horizontal"
-        app:layout_constraintDimensionRatio = "H, 4:1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/MyLinearLayout"
+        tools:ignore="MissingConstraints"
         app:layout_constraintBottom_toTopOf="@id/llBotones4">
         <Button
             android:id="@+id/btn4"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/point_4"
-            android:onClick="onClickButton"
-            android:textAppearance="?attr/textAppearanceHeadline3"
-            android:backgroundTint="@color/teal_800"/>
+            style="@style/MyButtonNumeric"
+            tools:ignore="MissingConstraints"/>
         <Button
             android:id="@+id/btn5"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/point_5"
-            android:onClick="onClickButton"
-            android:textAppearance="?attr/textAppearanceHeadline3"
-            android:backgroundTint="@color/teal_800"/>
+            style="@style/MyButtonNumeric"
+            tools:ignore="MissingConstraints"/>
         <Button
             android:id="@+id/btn6"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/point_6"
-            android:onClick="onClickButton"
-            android:textAppearance="?attr/textAppearanceHeadline3"
-            android:backgroundTint="@color/teal_800"/>
+            style="@style/MyButtonNumeric"
+            tools:ignore="MissingConstraints"/>
         <Button
             android:id="@+id/btnMultiplicacion"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
-            android:onClick="onClickButton"
             android:text="@string/point_multiplicacion"
-            android:textAppearance="?attr/textAppearanceHeadline3"
-            android:backgroundTint="@color/lBlue_800"/>
+            style="@style/MyButtonOperator"
+            tools:ignore="MissingConstraints"/>
     </LinearLayout>
 
 
     <LinearLayout
         android:id="@+id/llBotones4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_marginEnd="@dimen/common_padding_min"
-        app:layout_constraintDimensionRatio = "H, 4:1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/MyLinearLayout"
+        tools:ignore="MissingConstraints"
         app:layout_constraintBottom_toTopOf="@id/llBotones5"
         >
         <Button
             android:id="@+id/btn7"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/point_7"
-            android:onClick="onClickButton"
-            android:textAppearance="?attr/textAppearanceHeadline3"
-            android:backgroundTint="@color/teal_800"
+            style="@style/MyButtonNumeric"
+            tools:ignore="MissingConstraints"
             />
         <Button
             android:id="@+id/btn8"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/point_8"
-            android:onClick="onClickButton"
-            android:textAppearance="?attr/textAppearanceHeadline3"
-            android:backgroundTint="@color/teal_800"/>
+            style="@style/MyButtonNumeric"
+            tools:ignore="MissingConstraints"/>
         <Button
             android:id="@+id/btn9"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/point_9"
-            android:onClick="onClickButton"
-            android:textAppearance="?attr/textAppearanceHeadline3"
-            android:backgroundTint="@color/teal_800"/>
+            style="@style/MyButtonNumeric"
+            tools:ignore="MissingConstraints"/>
         <Button
             android:id="@+id/btnDivision"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
-            android:onClick="onClickButton"
             android:text="@string/point_division"
-            android:textAppearance="?attr/textAppearanceHeadline3"
-            android:backgroundTint="@color/lBlue_800"/>
+            style="@style/MyButtonOperator"
+            tools:ignore="MissingConstraints"/>
     </LinearLayout>
 
 
     <LinearLayout
         android:id="@+id/llBotones5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:onClick="onClickButton"
-        android:orientation="horizontal"
-        app:layout_constraintDimensionRatio = "H, 4:1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/MyLinearLayout"
+        tools:ignore="MissingConstraints"
         app:layout_constraintBottom_toBottomOf="parent">
         <Button
             android:id="@+id/btnDecimal"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/point_decimal"
-            android:textAppearance="?attr/textAppearanceHeadline3"
-            android:backgroundTint="@color/lBlue_900"
-            android:onClick="onClickButton"/>
+            style="@style/MyButtonSecondary"
+            tools:ignore="MissingConstraints"
+            />
         <Button
             android:id="@+id/btn0"
-            android:layout_marginStart="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
             android:text="@string/point_0"
-            android:textAppearance="?attr/textAppearanceHeadline3"
-            android:backgroundTint="@color/teal_800"
-            android:onClick="onClickButton"
+            style="@style/MyButtonNumeric"
+            tools:ignore="MissingConstraints"
            />
         <Button
             android:id="@+id/btnResultado"
             android:layout_marginStart="@dimen/common_padding_16"
-            android:layout_marginEnd="@dimen/common_padding_min"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
             android:layout_weight="50"
             android:text="@string/point_igual"
-            android:textAppearance="?attr/textAppearanceHeadline3"
-            android:backgroundTint="@color/lBlue_900"
-            android:onClick="onClickButton"/>
-
+            style="@style/MyResultButton"
+            tools:ignore="MissingConstraints"/>
     </LinearLayout>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

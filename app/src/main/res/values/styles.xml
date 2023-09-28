@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name = "MyTextView">
+        <item name = "android:layout_width">0dp</item>
+        <item name = "android:padding">@dimen/common_padding_min</item>
+        <item name = "android:background">?colorSurface</item>
+        <item name = "android:textColor">?colorOnSurface</item>
+
+        <item name = "layout_constraintStart_toStartOf">parent</item>
+        <item name = "layout_constraintEnd_toEndOf">parent</item>
+    </style>
+
+    <style name = "MyLinearLayout">
+        <item name = "android:layout_width">0dp</item>
+        <item name = "android:layout_height">0dp</item>
+        <item name = "android:orientation">horizontal</item>
+        <item name = "android:layout_marginEnd">@dimen/common_padding_min</item>
+        <item name = "layout_constraintDimensionRatio">H, 4:1</item>
+
+        <item name = "layout_constraintStart_toStartOf">parent</item>
+        <item name = "layout_constraintEnd_toEndOf">parent</item>
+    </style>
+
+    <style name = "MyButtonBase">
+        <item name = "android:layout_width">0dp</item>
+        <item name ="android:layout_marginStart">@dimen/common_padding_min</item>
+        <item name = "android:layout_height">match_parent</item>
+        <item name = "android:layout_weight">25</item>
+        <item name = "android:textAppearance">?attr/textAppearanceHeadline4</item>
+        <item name = "android:onClick">onClickButton</item>
+    </style>
+    <style name = "MyButtonNumeric" parent = "MyButtonBase">
+        <item name= "android:backgroundTint">@color/teal_800</item>
+    </style>
+    <style name = "MyButtonOperator" parent = "MyButtonBase">
+        <item name= "android:backgroundTint">@color/lBlue_900</item>
+    </style>
+    <style name = "MyButtonSecondary" parent = "MyButtonBase">
+        <item name= "android:backgroundTint">@color/blue_300</item>
+    </style>
+    <style name = "MyClearButton" parent = "MyButtonBase">
+        <item name = "android:backgroundTint">@color/red_500</item>
+        <item name = "android:layout_weight">50</item>
+    </style>
+    <style name = "MyResultButton" parent = "MyButtonSecondary">
+        <item name = "android:layout_weight">50</item>
+    </style>
+</resources>
