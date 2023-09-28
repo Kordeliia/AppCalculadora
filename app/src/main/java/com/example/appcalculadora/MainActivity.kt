@@ -4,16 +4,39 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import androidx.core.widget.addTextChangedListener
 import com.example.appcalculadora.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
 import java.lang.NumberFormatException
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.tvOperation.addTextChangedListener {charSequence ->
+            if(canReplaceOperator(charSequence.toString())){
+                val length = binding.tvOperation.text.length
+                val newOperation = binding.tvOperation.text.toString().substring(0, length-2) +
+                        binding.tvOperation.text.toString().substring( length-1)
+                binding.tvOperation.text = newOperation
+            }
+        }
+    }
+    private fun canReplaceOperator(charSquence: CharSequence): Boolean {
+        if (charSquence.length < 2) return false
+        val lastElement = charSquence[charSquence.length -1].toString()
+        val penultElement = charSquence[charSquence.length -2].toString()
+        return (lastElement == OPERATOR_MULTI ||
+                lastElement == OPERATOR_DIV ||
+                lastElement == OPERATOR_SUMA) &&
+                (penultElement == OPERATOR_MULTI ||
+                        penultElement == OPERATOR_DIV ||
+                        penultElement == OPERATOR_SUMA ||
+                        penultElement == OPERATOR_RESTA)
     }
 
     fun onClickButton(view: View) {
@@ -21,20 +44,15 @@ class MainActivity : AppCompatActivity() {
         when (view.id) {
             R.id.btnAtras -> {
                 val lenght = binding.tvOperation.text.length
-                val newOperation: String
-                if (lenght != 0) {
-                    newOperation = binding.tvOperation.text.toString().substring(0, lenght - 1)
-                } else {
-                    newOperation = binding.tvOperation.text.toString()
+                if (lenght > 0) {
+                    val newOperation = binding.tvOperation.text.toString().substring(0, lenght - 1)
+                    binding.tvOperation.text = newOperation
                 }
-                binding.tvOperation.text = newOperation
             }
-
             R.id.btnClear -> {
                 binding.tvOperation.text = ""
                 binding.tvResultado.text = ""
             }
-
             R.id.btnResultado -> {
                 tryResolve(binding.tvOperation.text.toString(), true)
             }
@@ -43,10 +61,50 @@ class MainActivity : AppCompatActivity() {
                 val operator = valueStr
                 val operation = binding.tvOperation.text.toString()
                 addOperator(operator, operation)
-               // binding.tvOperation.append(valueStr)
+            }
+            R.id.btnDecimal ->{
+                val operation = binding.tvOperation.text.toString()
+                addPoint(valueStr, operation)
             }
             else -> {
                 binding.tvOperation.append(valueStr)
+            }
+        }
+    }
+    private fun addPoint(pointStr: String, operation: String) {
+        if (!operation.contains(OPERATOR_DECIMAL)) {
+            binding.tvOperation.append(pointStr)
+        } else {
+            val operator = getOperator(operation)
+            var values = arrayOfNulls<String>(0)
+            if (operator != OPERATOR_NULL) {
+                if (operator == OPERATOR_RESTA) {
+                    val index = operation.lastIndexOf(OPERATOR_RESTA)
+                    if (index < operation.length - 1) {
+                        values = arrayOfNulls(2)
+                        values[0] = operation.substring(0, index)
+                        values[1] = operation.substring(index + 1)
+                    } else {
+                        values = arrayOfNulls(1)
+                        values[0] = operation.substring(0, index)
+                    }
+                } else {
+                    values = operation.split(operator).toTypedArray()
+
+                }
+            }
+            if(values.size > 0){
+                val numberOne = values[0]!!
+                if (values.size > 1) {
+                    val numberTwo = values[1]!!
+                    if(numberOne.contains(OPERATOR_DECIMAL) && !numberTwo.contains(OPERATOR_DECIMAL)){
+                        binding.tvOperation.append(pointStr)
+                    }
+                } else{
+                    if(numberOne.contains(OPERATOR_DECIMAL)){
+                        binding.tvOperation.append(pointStr)
+                    }
+                }
             }
         }
     }
@@ -84,7 +142,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 else{
                     values = arrayOfNulls(1)
-                    values[0] = operation.substring(0, index)
+                    values[0] = operationRef.substring(0, index)
                 }
             } else{
                 values = operation.split(operator).toTypedArray()
@@ -120,8 +178,6 @@ class MainActivity : AppCompatActivity() {
         var operator = ""
         if (operation.contains(OPERATOR_SUMA)) {
             operator = OPERATOR_SUMA
-        } else if (operation.contains(OPERATOR_RESTA)) {
-            operator = OPERATOR_RESTA
         } else if (operation.contains(OPERATOR_MULTI)) {
             operator = OPERATOR_MULTI
         } else if (operation.contains(OPERATOR_DIV)) {
